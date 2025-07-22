@@ -1,6 +1,7 @@
 # YouTube Bulk Upload - TypeScript Implementation
 
-A modern TypeScript implementation of the YouTube bulk upload tool, built with clean architecture principles and comprehensive tooling.
+A modern TypeScript implementation of the YouTube bulk upload tool, built with clean architecture
+principles and comprehensive tooling.
 
 ## 🏗️ Architecture
 
@@ -136,13 +137,13 @@ src/
 
 Your spreadsheet should have these columns:
 
-| Column | Description | Example |
-|--------|-------------|---------|
-| A | Drive Link | https://drive.google.com/file/d/... |
-| B | Title | My Amazing Video |
-| C | Description | This video shows... |
-| D | Tags | tutorial,programming,typescript |
-| E | Unique ID | video_001 |
+| Column | Description | Example                             |
+| ------ | ----------- | ----------------------------------- |
+| A      | Drive Link  | https://drive.google.com/file/d/... |
+| B      | Title       | My Amazing Video                    |
+| C      | Description | This video shows...                 |
+| D      | Tags        | tutorial,programming,typescript     |
+| E      | Unique ID   | video_001                           |
 
 ## 🔄 Progress Tracking
 
@@ -167,6 +168,7 @@ pnpm test:coverage
 ```
 
 Current test coverage:
+
 - ✅ Pure utility functions (16 tests)
 - 🚧 Service unit tests (coming soon)
 - 🚧 Integration tests (coming soon)

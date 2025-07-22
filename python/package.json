@@ -1,0 +1,6 @@
+{
+  "name": "youtube-bulk-upload-python",
+  "version": "1.0.0",
+  "description": "YouTube Bulk Upload tool - Python implementation",
+  "private": true
+}

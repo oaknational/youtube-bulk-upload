@@ -50,7 +50,7 @@ python main.py <spreadsheet_id> [--sheet-range "Sheet1"] [--resume]
 1. **Pure Functions**: All business logic as pure functions with no side effects
 2. **Dependency Injection**: I/O operations injected via interfaces/protocols
 3. **Test-Driven Development**: Write tests first, especially for pure functions
-4. **Integration Tests**: Mock all external dependencies (Google APIs, file system)
+4. **Integration Tests**: Mock all external dependencies (Google APIs, file system). Keep mocks simple: complex mocks indicate a design problem and suggest a refactoring opportunity.
 
 ### Project Structure
 
@@ -86,6 +86,8 @@ python main.py <spreadsheet_id> [--sheet-range "Sheet1"] [--resume]
 1. **Unit Tests**: Test all pure functions in isolation
 2. **Integration Tests**: Test main upload flow with mocked APIs
 3. **Mock Requirements**:
+   - Mock all external dependencies (Google APIs, file system)
+   - Keep all mocks simple, complex mocks indicate a design problem and suggest a refactoring opportunity
    - Google Sheets API responses
    - Google Drive download operations
    - YouTube upload operations
@@ -94,7 +96,7 @@ python main.py <spreadsheet_id> [--sheet-range "Sheet1"] [--resume]
 ## Development Guidelines
 
 1. Use unit test TDD of pure functions. NO side effects, NO I/O
-2. Use integration tests for the main script. Mock ALL I/O
+2. Use integration tests for the main script. Mock ALL I/O with simple mocks
 3. Regardless of language, use the best practices for that language and the best practices for software development in general. Correctness is more important than rapid development.
 4. Use SOLID principles
 5. Use KISS, YAGNI, DRY principles

@@ -17,8 +17,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "quality": "pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test",
-    "prepare": "husky || true"
+    "quality": "pnpm run format:check && pnpm run lint:check && pnpm run typecheck && pnpm run test"
   },
   "keywords": [
     "youtube",
@@ -32,10 +31,10 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "googleapis": "^153.0.0",
-    "google-auth-library": "^10.1.0",
+    "consola": "^3.3.0",
     "dotenv": "^17.2.0",
-    "consola": "^3.3.0"
+    "google-auth-library": "^10.1.0",
+    "googleapis": "^153.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
@@ -44,21 +43,10 @@
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^10.0.0",
     "globals": "^16.3.0",
-    "husky": "^9.1.0",
-    "lint-staged": "^16.1.0",
     "prettier": "^3.4.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.20.0",
     "vitest": "^3.2.0"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
-    "*.{json,md,yml,yaml}": [
-      "prettier --write"
-    ]
   }
 }

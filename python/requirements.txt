@@ -1,0 +1,16 @@
+# Production dependencies
+google-auth>=2.25.0
+google-auth-oauthlib>=1.2.0
+google-auth-httplib2>=0.2.0
+google-api-python-client>=2.100.0
+python-dotenv>=1.0.0
+
+# Development dependencies
+black>=24.0.0
+isort>=5.13.0
+mypy>=1.8.0
+pytest>=8.0.0
+pytest-watch>=4.2.0
+pytest-cov>=5.0.0
+ruff>=0.5.0
+types-requests>=2.31.0

@@ -1,0 +1,49 @@
+{
+  "name": "youtube-bulk-upload",
+  "version": "1.0.0",
+  "description": "YouTube Bulk Upload tool - monorepo for TypeScript and Python implementations",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "format": "pnpm run format:ts && pnpm run format:py",
+    "format:ts": "cd typescript && pnpm run format",
+    "format:py": "cd python && make format",
+    "lint": "pnpm run lint:ts && pnpm run lint:py",
+    "lint:ts": "cd typescript && pnpm run lint",
+    "lint:py": "cd python && make lint",
+    "typecheck": "pnpm run typecheck:ts && pnpm run typecheck:py",
+    "typecheck:ts": "cd typescript && pnpm run typecheck",
+    "typecheck:py": "cd python && mypy .",
+    "test": "pnpm run test:ts && pnpm run test:py",
+    "test:ts": "cd typescript && pnpm run test",
+    "test:py": "cd python && pytest",
+    "quality": "pnpm run quality:ts && pnpm run quality:py",
+    "quality:ts": "cd typescript && pnpm run quality",
+    "quality:py": "cd python && make all",
+    "ts:install": "cd typescript && pnpm install",
+    "py:install": "cd python && pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2"
+  },
+  "lint-staged": {
+    "typescript/**/*.{ts,tsx}": [
+      "cd typescript && pnpm run format:check",
+      "cd typescript && pnpm run lint:check"
+    ],
+    "typescript/**/*.{json,md,yml,yaml}": [
+      "cd typescript && pnpm exec prettier --check"
+    ],
+    "python/**/*.py": [
+      "cd python && black --check .",
+      "cd python && isort --check-only .",
+      "cd python && mypy .",
+      "cd python && ruff check ."
+    ],
+    "python/**/*.{json,md,yml,yaml,toml}": [
+      "cd python && black --check ."
+    ]
+  }
+}
