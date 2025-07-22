@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "YouTube Bulk Upload tool - TypeScript implementation",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/main.js",
+  "types": "dist/src/main.d.ts",
   "scripts": {
-    "start": "tsx index.ts",
+    "start": "tsx src/main.ts",
     "build": "tsc",
-    "dev": "tsx watch index.ts",
+    "dev": "tsx watch src/main.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --fix",
@@ -34,7 +34,8 @@
   "dependencies": {
     "googleapis": "^153.0.0",
     "google-auth-library": "^10.1.0",
-    "dotenv": "^17.2.0"
+    "dotenv": "^17.2.0",
+    "consola": "^3.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
