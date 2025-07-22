@@ -1,0 +1,8 @@
+dist
+coverage
+node_modules
+*.log
+*.tmp
+.env
+token.json
+upload_progress.json
