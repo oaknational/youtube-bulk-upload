@@ -3,12 +3,12 @@
 from io import BufferedReader, BufferedWriter
 from os import PathLike, stat_result
 from typing import Optional, Union
-from unittest.mock import Mock, MagicMock
+from unittest.mock import MagicMock, Mock
 
 import pytest
 from google.oauth2.credentials import Credentials
 
-from src.interfaces import (
+from interfaces import (
     IAuthenticationService,
     IFileOperations,
     IGoogleDriveService,
@@ -17,7 +17,7 @@ from src.interfaces import (
     IProgressTracker,
     IYouTubeService,
 )
-from src.types import AuthTokens, UploadProgress, VideoData, FailedUpload
+from models import AuthTokens, FailedUpload, UploadProgress, VideoData  # noqa: F401
 
 
 class TestILogger:

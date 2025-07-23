@@ -1,6 +1,5 @@
 """Verify test infrastructure works"""
 
-
 import pytest
 
 

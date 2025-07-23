@@ -5,7 +5,7 @@ from datetime import datetime
 
 import pytest
 
-from src.types import AuthTokens, Config, FailedUpload, UploadProgress, VideoData
+from models import AuthTokens, Config, FailedUpload, UploadProgress, VideoData
 
 
 class TestVideoData:
@@ -162,9 +162,7 @@ class TestUploadProgress:
         data = {
             "processed_ids": ["id1", "id2"],
             "last_processed_row": 5,
-            "failed_uploads": [
-                {"unique_id": "123", "error": "Error", "timestamp": "2023-01-01"}
-            ],
+            "failed_uploads": [{"unique_id": "123", "error": "Error", "timestamp": "2023-01-01"}],
         }
         progress = UploadProgress.from_dict(data)
 

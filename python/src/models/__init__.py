@@ -70,9 +70,7 @@ class UploadProgress:
         return cls(
             processed_ids=set(data.get("processed_ids", [])),
             last_processed_row=data.get("last_processed_row", 0),
-            failed_uploads=[
-                FailedUpload(**fu) for fu in data.get("failed_uploads", [])
-            ],
+            failed_uploads=[FailedUpload(**fu) for fu in data.get("failed_uploads", [])],
         )
 
 

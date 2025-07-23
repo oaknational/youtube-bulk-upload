@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List
 
-# Note: We'll import from src.types.models once it's created
+# Note: We'll import from types.models once it's created
 # For now, let's create mock data factory functions that return dicts
 
 

@@ -9,7 +9,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import Resource
 from googleapiclient.http import MediaIoBaseDownload
 
-from src.types import AuthTokens, UploadProgress, VideoData
+from models import AuthTokens, UploadProgress, VideoData
 
 
 class ILogger(Protocol):
@@ -119,7 +119,10 @@ class IGoogleDriveService(Protocol):
 
     @abstractmethod
     def download_file(
-        self, file_id: str, destination_path: str, progress_callback: Optional[Callable[[int, int], None]] = None
+        self,
+        file_id: str,
+        destination_path: str,
+        progress_callback: Optional[Callable[[int, int], None]] = None,
     ) -> None:
         """Downloads file from Drive to local filesystem."""
         ...
