@@ -14,13 +14,19 @@ YouTube Bulk Upload tool - automates uploading multiple videos from Google Drive
 # Install dependencies
 pnpm install
 
-# Development commands (to be implemented)
+# Development commands
 pnpm run format      # prettier --write .
 pnpm run lint        # eslint . --fix
 pnpm run typecheck   # tsc --noEmit
 pnpm run test        # vitest
 pnpm run test:watch  # vitest --watch
 pnpm run build       # tsc
+pnpm run quality     # Run all checks (format, lint, typecheck, test)
+
+# Check for outdated dependencies
+pnpm outdated        # Check which packages need updates
+pnpm update          # Update dependencies within semver ranges
+pnpm update --latest # Update all dependencies to latest versions
 
 # Run the script
 pnpm start -- <spreadsheet_id>
@@ -29,18 +35,25 @@ pnpm start -- <spreadsheet_id>
 ### Python (python/)
 
 ```bash
-# Install dependencies (to be implemented)
-pip install -r requirements.txt  # or: pip install -e ".[dev]"
+# Install dependencies
+pip install -e ".[dev]"  # or: make dev-install
 
-# Development commands (to be implemented)
+# Development commands
 make format      # black . && isort .
-make lint        # mypy . && ruff check .
+make lint        # ruff check .
+make typecheck   # mypy .
 make test        # pytest
 make test-watch  # pytest-watch
-make all         # format, lint, test
+make coverage    # pytest with coverage report
+make quality     # format-check, lint, typecheck, test
+make all         # format, lint-fix, typecheck, test
+
+# Check for outdated dependencies
+make outdated    # Check which packages need updates
+make update-deps # Update all dependencies to latest versions
 
 # Run the script
-python main.py <spreadsheet_id> [--sheet-range "Sheet1"] [--resume]
+python -m src.main <spreadsheet_id> [--sheet-range "Sheet1"] [--resume]
 ```
 
 ## Architecture
@@ -105,7 +118,7 @@ python main.py <spreadsheet_id> [--sheet-range "Sheet1"] [--resume]
    2. Python: mypy, pytest, black, isort, with quality gates; format, type-check, lint, test, build
 7. Dependencies and configuration and versions
    1. TypeScript: pnpm install. please use `pnpm outdated` regularly to check that you are using up to date tooling, and use internet searches to make sure you are using config and approaches suitable to latest version of each tool
-   2. Python: pip install -r requirements.txt. please use `pip list` to check that you are using up to date tooling, and use internet searches to make sure you are using config and approaches suitable to latest version of each tool
+   2. Python: pip install -e ".[dev]". please use `make outdated` (or `python scripts/check_deps.py`) regularly to check that you are using up to date tooling and modern configuration syntax, and use internet searches to make sure you are using config and approaches suitable to latest version of each tool
 
 ## API Authentication
 

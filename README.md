@@ -42,7 +42,21 @@ pnpm install  # or npm install
 
 ```bash
 cd python
-pip install -r requirements.txt  # requirements.txt needs to be created
+
+# Create virtual environment (Python 3.8+)
+python -m venv venv
+
+# Activate virtual environment
+# On Linux/Mac:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# For development (includes testing and linting tools)
+pip install -e ".[dev]"
 ```
 
 ## Configuration
