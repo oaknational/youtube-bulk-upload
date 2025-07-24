@@ -98,6 +98,136 @@ python -m src.main SPREADSHEET_ID --sheet-range "Videos!A:E" --resume
 python -m src.main SPREADSHEET_ID --retry-failed
 ```
 
+## 🛠️ Getting Started with Development
+
+If you're planning to contribute to or modify this project, follow these steps:
+
+### 1. Ensure Correct Python Version
+
+First, verify you have the correct Python version:
+
+```bash
+# Check your Python version
+python3 --version  # Should output Python 3.8.x or higher
+
+# If python3 is not found or is too old:
+# On macOS with Homebrew:
+brew install python@3.11
+
+# On Ubuntu/Debian:
+sudo apt update && sudo apt install python3.11 python3.11-venv
+
+# On Windows:
+# Download from https://www.python.org/downloads/
+```
+
+**Important:** Always use `python3` explicitly, not just `python` (which might be Python 2.7).
+
+### 2. Set Up Your Development Environment
+
+```bash
+# Clone the repository (if you haven't already)
+git clone <repository-url>
+cd youtube-bulk-upload/python
+
+# Create a virtual environment with the correct Python version
+python3 -m venv venv
+
+# Activate the virtual environment
+# On Linux/macOS:
+source venv/bin/activate
+# On Windows:
+venv\Scripts\activate
+
+# Verify you're using the venv Python (should show the venv path)
+which python  # Linux/macOS
+where python  # Windows
+
+# The Python version should now be correct
+python --version  # Should show Python 3.8+
+
+# Install development dependencies
+pip install -e ".[dev]"  # or: make dev-install
+```
+
+**Troubleshooting venv activation:**
+- If `source venv/bin/activate` doesn't work, try `. venv/bin/activate`
+- On Windows PowerShell, you may need to run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+- Always look for `(venv)` in your terminal prompt to confirm activation
+
+### 3. Verify Your Setup
+
+```bash
+# Check that all tools are installed
+python --version  # Should be 3.8+
+black --version
+mypy --version
+pytest --version
+
+# Run the test suite to ensure everything works
+make test  # or: pytest
+
+# Check code quality
+make quality  # Runs format-check, lint, typecheck, and test
+```
+
+### 4. Understanding the Development Workflow
+
+Before making changes:
+1. **Always activate your virtual environment** (`source venv/bin/activate`)
+2. **Run tests first** to ensure you're starting from a working state
+3. **Use the Makefile commands** for consistency
+
+While developing:
+1. **Write tests first (TDD)** for new functionality
+2. **Run `make format`** to auto-format your code
+3. **Run `make quality`** before committing
+
+Key development commands:
+```bash
+make format      # Auto-format code with Black and isort
+make lint        # Check code with Ruff
+make typecheck   # Type-check with MyPy
+make test        # Run all tests
+make test-watch  # Run tests in watch mode (auto-rerun on changes)
+make coverage    # Generate test coverage report
+```
+
+### 5. Common Development Tasks
+
+**Adding a new feature:**
+```bash
+# 1. Write a test for your feature
+# 2. Run the test (it should fail)
+make test-watch
+
+# 3. Implement the feature
+# 4. Run tests again (they should pass)
+# 5. Run quality checks
+make quality
+```
+
+**Debugging issues:**
+```bash
+# Run specific test file
+pytest tests/unit/test_specific.py -v
+
+# Run with debugging output
+pytest -s -v  # -s shows print statements
+
+# Check type errors
+mypy src --show-error-codes
+```
+
+**Checking dependencies:**
+```bash
+# See outdated packages
+make outdated  # or: python scripts/check_deps.py
+
+# Update dependencies
+make update-deps
+```
+
 ## 📋 Configuration
 
 ### OAuth2 Credentials
