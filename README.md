@@ -224,8 +224,10 @@ The tool requires the following OAuth2 scopes:
 
 ## Contributing
 
-See [CLAUDE.md](./CLAUDE.md) for development guidelines and coding standards.
+This is an experimental spike project and **we are not accepting external contributions** at this time. The codebase is provided as-is for reference and learning purposes.
+
+If you find this useful, feel free to fork and adapt it for your own needs!
 
 ## License
 
-[Add your license here]
+MIT License - see [LICENSE](./LICENSE) file for details.

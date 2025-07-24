@@ -488,4 +488,4 @@ pip install dist/youtube_bulk_upload-1.0.0.tar.gz
 
 ## 📄 License
 
-[Your license here]
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
