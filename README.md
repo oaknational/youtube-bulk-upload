@@ -174,6 +174,14 @@ The tool saves progress after each successful upload:
 - Resume capability: Skip already uploaded videos
 - Failed uploads: Logged with error details for retry
 
+## Security Notice
+
+- **Never commit real credentials** to version control
+- Store OAuth2 credentials securely (credentials.json)
+- Use environment variables for sensitive configuration
+- All sensitive files are gitignored by default
+- Review `.gitignore` before committing
+
 ## Troubleshooting
 
 ### Common Issues
