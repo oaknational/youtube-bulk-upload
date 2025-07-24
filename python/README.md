@@ -53,7 +53,7 @@ deactivate
 
 ## 🏗️ Architecture
 
-This implementation mirrors the TypeScript version with Python idioms:
+This implementation mirrors the TypeScript version with Python idioms. For detailed documentation, see [.agent/](./../.agent/) directory.
 
 ### Core Components
 

@@ -151,6 +151,12 @@ pnpm run format
 ### Project Structure
 
 ```
+.agent/              # Developer documentation
+├── README.md       # Navigation guide for developers
+├── project-summary.md    # Complete project overview
+├── improvement-plan.md   # Development roadmap
+└── documentation-report.md # Documentation analysis
+
 typescript/src/
 ├── core/           # Core business logic
 ├── interfaces/     # Service contracts (dependency inversion)
@@ -159,6 +165,8 @@ typescript/src/
 ├── utils/          # Pure utility functions
 └── main.ts         # Application entry point
 ```
+
+For detailed architecture documentation, see [.agent/project-summary.md](./.agent/project-summary.md).
 
 ## Authentication Flow
 

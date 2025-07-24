@@ -5,7 +5,7 @@ principles and comprehensive tooling.
 
 ## 🏗️ Architecture
 
-This implementation follows SOLID principles with a clean architecture approach:
+This implementation follows SOLID principles with a clean architecture approach. For comprehensive documentation, see [.agent/](./../.agent/) directory.
 
 ### Core Components
 
